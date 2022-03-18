@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import { Provider } from 'react-redux';
 import QuestionWorkspace from './components/question/QuestionWorkspace';
+import Canaux from './components/canaux/Canaux';
+import Membres from './components/membres/Membres';
 import { store } from './redux/store';
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
               <li>
                 <Link to="/canaux">Canaux</Link>
               </li>
+              
               <li>
                 <Link to="/efg">Exercices</Link>
               </li>
@@ -34,10 +37,14 @@ function App() {
           <Route path="/questions">
               <QuestionWorkspace/>
           </Route>
-          {/* <Route path="/canaux">
-              <MyComponent/>
+          <Route path="/canaux">
+              <Canaux/>
           </Route>
-          <Route path="/efg">
+          <Route path="/membres">
+              <Membres/>
+          </Route>
+          
+          {/* <Route path="/efg">
               <MyComponent/>
           </Route> */}
         </Switch>
