@@ -7,8 +7,9 @@ import {
   Link
 } from "react-router-dom";
 import { Provider } from 'react-redux';
-import QuestionWorkspace from './components/question/QuestionWorkspace';
+import QuestionWorkspace from './question/components/QuestionWorkspace';
 import { store } from './redux/store';
+import { QuestionsProvider } from './question/contexts/questions.context';
 
 function App() {
   return (
@@ -32,13 +33,15 @@ function App() {
           
         <Switch>
           <Route path="/questions">
+            <QuestionsProvider>
               <QuestionWorkspace/>
+            </QuestionsProvider>
           </Route>
           {/* <Route path="/canaux">
-              <MyComponent/>
+            <MyComponent/>
           </Route>
           <Route path="/efg">
-              <MyComponent/>
+            <MyComponent/>
           </Route> */}
         </Switch>
       </div>

@@ -2,10 +2,13 @@ import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { actionCreators } from "../../redux/store"
 
-const Question = () => { //props = {todos: [{}, {}]}
+const Question = ({question}) => { //props = {todos: [{}, {}]}
     return (
         <div>
-            <h1> Une question s affiche ici</h1>
+            <p>{question.id}</p>
+            <p>{question.libelle}</p>
+            <p>{question.auteur}</p>
+
         </div>
     )
 }
