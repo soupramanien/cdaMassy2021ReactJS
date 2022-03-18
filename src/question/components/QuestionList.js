@@ -3,14 +3,12 @@ import { useDispatch } from "react-redux"
 import { actionCreators } from "../../redux/store"
 import Question from "./Question";
 
-const QuestionList = () => {//props = {todos: [{}, {}]}
-    const questions = useSelector(state => state.question.allQuestions);
-    const dispatch = useDispatch()
+const QuestionList = ({list}) => {//props = {todos: [{}, {}]}
     // const onAddQuestionPress = () => dispatch(actionCreators.setAddQuestionMode(true))
     return (
         <div>
             <div>
-                {questions.map((question) => {
+                {list.map((question) => {
                     return <Question key={question.id.toString()} question={question} />
                 })}
             </div>
