@@ -5,7 +5,7 @@ const QuestionWorkspace = () => {//props = {todos: [{}, {}]}
     const questionsContext = useQuestions();
     return (
         <div>
-            <h1>Questions Workspace</h1>
+            <h1>Sondages:</h1>
                 {!questionsContext.isLoading?<QuestionList list={questionsContext.questionsData}/>:<p>Loading ...</p>}
         </div>
     )

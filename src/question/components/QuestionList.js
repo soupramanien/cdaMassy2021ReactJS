@@ -9,7 +9,7 @@ const QuestionList = ({list}) => {//props = {todos: [{}, {}]}
         <div>
             <div>
                 {list.map((question) => {
-                    return <Question key={question.id.toString()} question={question} />
+                    return <Question key={question.idQuestion.toString()} question={question} />
                 })}
             </div>
             {/* <Button title="Add new question" onPress={onAddQuestionPress} /> */}

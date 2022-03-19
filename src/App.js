@@ -22,7 +22,7 @@ function App() {
           <nav>
             <ul>
               <li>
-                <Link to="/questions">Questions</Link>
+                <Link to="/questions">Sondages</Link>
               </li>
               <li>
                 <Link to="/canaux">Canaux</Link>
