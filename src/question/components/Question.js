@@ -7,7 +7,7 @@ const Question = ({question}) => { //props = {todos: [{}, {}]}
         <div>
             <p>{question.idQuestion}</p>
             <p>{question.libelle}</p>
-            <p>{question.auteur.nom}</p>
+            <p>{question.nomAuteur}</p>
 
         </div>
     )
