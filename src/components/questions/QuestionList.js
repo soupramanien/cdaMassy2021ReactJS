@@ -1,6 +1,3 @@
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux"
-import { actionCreators } from "../../redux/store"
 import Question from "./Question";
 
 const QuestionList = ({list}) => {//props = {todos: [{}, {}]}
