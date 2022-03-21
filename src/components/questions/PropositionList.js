@@ -1,15 +1,15 @@
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { actionCreators } from "../../redux/store"
-import Question from "./Question";
+import Proposition from "./Proposition";
 
-const QuestionList = ({list}) => {//props = {todos: [{}, {}]}
+const PropositionList = ({list}) => {//props = {todos: [{}, {}]}
     // const onAddQuestionPress = () => dispatch(actionCreators.setAddQuestionMode(true))
     return (
         <div>
             <div>
-                {list.map((question) => {
-                    return <Question key={question.idQuestion.toString()} question={question} />
+                {list.map((proposition) => {
+                    return <Proposition key={proposition.idProposition.toString()} proposition={proposition} />
                 })}
             </div>
             {/* <Button title="Add new question" onPress={onAddQuestionPress} /> */}
@@ -17,4 +17,4 @@ const QuestionList = ({list}) => {//props = {todos: [{}, {}]}
     )
 }
 
-export default QuestionList;
+export default PropositionList;
