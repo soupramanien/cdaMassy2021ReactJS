@@ -8,11 +8,11 @@ import PropositionList from "./PropositionList";
 const Question = ({question}) => { //props = {todos: [{}, {}]}
     const questionsContext = useQuestions();
     return (
-        <div class="questionWorkspace1">
-            <div class="questiontitle">
+        <div className="questionWorkspace1">
+            <div className="questiontitle">
                 {question.idQuestion}. 
                 {question.libelle}
-                <p class="nomauteur">  {question.nomAuteur}</p>
+                <p className="nomauteur">  {question.nomAuteur}</p>
                
             </div>
 
