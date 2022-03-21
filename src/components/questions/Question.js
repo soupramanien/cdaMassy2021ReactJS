@@ -13,10 +13,8 @@ const Question = ({question}) => { //props = {todos: [{}, {}]}
                 {question.idQuestion}. 
                 {question.libelle}
                 <p className="nomauteur">  {question.nomAuteur}</p>
-               
+                {!questionsContext.isLoading?<PropositionList list={question.propositions}/>:<p>Loading ...</p>}
             </div>
-
-            {!questionsContext.isLoading?<PropositionList list={question.propositions}/>:<p>Loading ...</p>}
         </div>
     )
 }
