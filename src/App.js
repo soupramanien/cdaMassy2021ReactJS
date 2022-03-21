@@ -7,11 +7,11 @@ import {
   Link
 } from "react-router-dom";
 import { Provider } from 'react-redux';
-import QuestionWorkspace from './question/components/QuestionWorkspace';
+import QuestionWorkspace from './components/questions/QuestionWorkspace';
 import Canaux from './components/canaux/Canaux';
 import Membres from './components/membres/Membres';
 import { store } from './redux/store';
-import { QuestionsProvider } from './question/contexts/questions.context';
+import { QuestionsProvider } from './contexts/questions.context';
 
 function App() {
   return (

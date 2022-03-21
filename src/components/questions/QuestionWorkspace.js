@@ -1,5 +1,5 @@
 import QuestionList from "./QuestionList";
-import { QuestionsProvider, useQuestions } from "../contexts/questions.context";
+import { QuestionsProvider, useQuestions } from "../../contexts/questions.context";
 
 const QuestionWorkspace = () => {//props = {todos: [{}, {}]}
     const questionsContext = useQuestions();
