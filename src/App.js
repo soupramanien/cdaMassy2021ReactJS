@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,23 +11,27 @@ import Canaux from './components/canaux/Canaux';
 import Membres from './components/membres/Membres';
 import { store } from './redux/store';
 import { QuestionsProvider } from './question/contexts/questions.context';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
 
 function App() {
   return (
     <Provider store={store}>
     <div>    
       <Router>
-        <div>
+        <div >
           <nav>
-            <ul>
-              <li>
+            <ul >
+              <li >
                 <Link to="/questions">Sondages</Link>
               </li>
-              <li>
+              <li >
                 <Link to="/canaux">Canaux</Link>
               </li>
               
-              <li>
+              <li >
                 <Link to="/efg">Exercices</Link>
               </li>
             </ul>
