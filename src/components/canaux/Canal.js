@@ -3,9 +3,10 @@ import {Link} from "react-router-dom";
 
 
 function Canal(props){
+    
         return (
             <div>
-                <Link to="/membres">{props.canal.nom}</Link>
+                <Link to="/membres/">{props.canal.nom}</Link>
             </div>
         )
 

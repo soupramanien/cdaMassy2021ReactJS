@@ -1,4 +1,3 @@
-
 import React from "react";
 import Canal from "./Canal";
 import {useDispatch} from "react-redux";
@@ -16,5 +15,4 @@ function Canaux(){
         </div>
     )
 }
-
 export default Canaux;

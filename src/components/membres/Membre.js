@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 
-const Membre =() =>{
-    return(
+function Membre(props){
+    return (
         <div>
-                <h1>Membre</h1>
-            </div>
+            <h2>{props.membre.prenom} {props.membre.nom}</h2>  
+        </div>
     )
 }
+
 export default Membre;
