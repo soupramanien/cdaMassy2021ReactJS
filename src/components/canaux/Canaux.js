@@ -1,14 +1,20 @@
 
 import React from "react";
 import Canal from "./Canal";
+import {useDispatch} from "react-redux";
+import { actionCreators } from "../../redux/store";
+import {useSelector} from "react-redux";
 
-const Canaux = () => {
+function Canaux(){
+    const canaux = useSelector(state => state.canal.canaux)
     return (
         <div>
             <h1> Liste des canaux </h1>
-            <Canal/>
-            
+            {canaux.map((canal) => {
+                    return <Canal key={canal.idCanal} canal={canal} />
+                })}
         </div>
     )
 }
+
 export default Canaux;
