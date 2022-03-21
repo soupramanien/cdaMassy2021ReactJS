@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import {Link} from "react-router-dom";
 
-const Canal = () =>{
-    
+
+function Canal(props){
         return (
             <div>
-                <h1>Canal</h1>
-                <Link to="/membres">Nom du Canal</Link>
+                <Link to="/membres">{props.canal.nom}</Link>
             </div>
         )
 
