@@ -8,8 +8,22 @@ const QuestionsProvider =({children}) => {
     const [isLoading, isLoadingChange] = React.useState(true);
     const [errorMessage, setErrorMessage] = React.useState(undefined);
 
+    const selectedCanalId = 2;
+
     async function getQuestionsData(){
         questionsServices.getQuestionsData()
+        .then( response => {
+            setQuestionsData(response.data);
+            isLoadingChange(false);
+            console.log(response.data); 
+        })
+        .catch(error => {
+            setErrorMessage(error.message);
+        })
+    }
+
+    async function getQuestionsDataByCanalId(canalId){
+        questionsServices.getQuestionsDataByCanalId(canalId)
         .then( response => {
             setQuestionsData(response.data);
             isLoadingChange(false);
@@ -31,11 +45,11 @@ const QuestionsProvider =({children}) => {
         })
     }
     React.useEffect(() => {
-        getQuestionsData();
+        //getQuestionsDataByCanalId(selectedCanalId);
     }, [])
 
     return (
-        <QuestionsContext.Provider value = {{questionsData, isLoading, errorMessage, postQuestion}}>  {/* C'est ca qu'on utilise */}
+        <QuestionsContext.Provider value = {{questionsData, isLoading, errorMessage, postQuestion, getQuestionsDataByCanalId}}>  {/* C'est ca qu'on utilise */}
             {children}
         </QuestionsContext.Provider>
     );
