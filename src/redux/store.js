@@ -34,20 +34,36 @@ const initialState = {
 }
 
 const actionTypes = {
-    ADD_CANAL: "addCanal"
+    ADD_CANAL: "addCanal",
+    ADD_MEMBRE: "addMembre",
+    DELETE_MEMBRE: "deleteMembre"
+
 }
 
 export const actionCreators = {
     addCanal: (canal) => ({
         type: actionTypes.ADD_CANAL,
         value: canal
-        })
+        }),
+    addMembre: (membre) =>({
+        type: actionTypes.ADD_MEMBRE,
+        value: membre
+    }),
+    deleteMembre: (membreCanal) =>({
+        type: actionTypes.DELETE_MEMBRE,
+        value: membreCanal
+    })
+    
 }
 
 const reducer = function (state = initialState, action) {
     switch (action.type) {
         case actionTypes.ADD_CANAL:
             return { ...state, canal: { ...state.canal, canaux: [ ...state.canal.canaux,action.value ] }}
+        case actionTypes.ADD_MEMBRE:
+            return { ...state, membreCanal: {...state.membreCanal, membresCanal: [ ...state.membreCanal.membresCanal,action.value ] }}
+        case actionTypes.DELETE_MEMBRE:
+             return { ...state, membreCanal: {...state.membreCanal, membresCanal: [ ...state.membreCanal.membresCanal,action.value ] }}
 
         default:
           return state;
