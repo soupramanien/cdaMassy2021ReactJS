@@ -30,7 +30,7 @@ function App() {
               </li>
               
               <li>
-                <Link to="/efg">Exercices</Link>
+                <Link to="/efgs">Exercices</Link>
               </li>
             </ul>
           </nav>
@@ -51,8 +51,8 @@ function App() {
               <Membres/>
           </Route>
 
-          <Route path="/efg">
-              <Efgs/>
+          <Route path="/efgs">
+              <Efgs />
           </Route>
 
         </Switch>
