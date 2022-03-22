@@ -1,0 +1,35 @@
+== Verifier le Login ==
+
+@startuml
+boundary LoginComponent
+participant JwtTokenAuthFilter
+control DispatcherServlet 
+control AuthController 
+participant AuthService
+entity userDTO
+participant JwtService 
+
+LoginComponent -> JwtTokenAuthFilter : Get/api/auth/login 
+JwtTokenAuthFilter -> JwtTokenAuthFilter : check if token exists
+==Token not found ==
+JwtTokenAuthFilter -> LoginComponent : error message 
+==Token OK ==
+JwtTokenAuthFilter -> DispatcherServlet : Post/api/auth/login
+DispatcherServlet -> AuthController : login(username,password)
+AuthController -> AuthService : login(username,password)
+AuthService -> UserRepository : findByUsername(username)
+==Login not correct==
+UserRepository -> AuthService : null
+AuthService -> AuthController : UserNotFoundException()
+AuthController -> DispatcherServlet : ResponseEntity.badRequest().build()
+DispatcherServlet -> LoginComponent : error message
+==Login correct==
+UserRepository  -> AuthService : return User
+AuthService -> AuthController : return userDTO
+AuthController -> JwtService : getJWT(username, userDTO)
+JwtService -> AuthController : return JWTToken
+AuthController -> userDTO:UserDTO
+AuthController  -> userDTO:setAccessToken(JWTToken)
+AuthController  -> DispatcherServlet :return ResponseEntity(userDTO)
+DispatcherServlet -> LoginComponent :return response
+@enduml
