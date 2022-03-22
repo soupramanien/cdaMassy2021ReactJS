@@ -13,6 +13,17 @@ const initialState = {
 			idCanal: 1,
 			idCreateur: 1,
 		},
+		{
+			idEfg: 2,
+			createur: {
+				idCanal: 1,
+				idPersonne: 2,
+			},
+			intitule: 'TP définir but',
+			groupes: '2,2,3',
+			idCanal: 1,
+			idCreateur: 2,
+		}
 	],
 };
 

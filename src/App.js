@@ -44,7 +44,7 @@ function App() {
 								<Membres />
 							</Route>
 							<Route exact path='/efgs' component={EFGList} />
-							<Route exact path='/efgs/1' component={EFGDetail} />
+							<Route exact path='/efgs/:idEfg' component={EFGDetail} />
 						</Switch>
 					</div>
 				</Router>

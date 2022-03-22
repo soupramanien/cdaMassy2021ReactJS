@@ -1,12 +1,18 @@
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function EFGList() {
 	console.log('tededest');
+	const efgs = useSelector((state)=>state.efgs);
 	return (
 		<>
 			<h1>Voici la liste des EFG</h1>
-
-			<Link to='/efgs/1'>EFG 1</Link>
+			{efgs.map((efg)=>(
+				<Link 
+					to={`/efgs/${efg.idEfg}`} 
+					key={efg.idEfg}
+				>EFG {efg.idEfg}</Link>
+			))}
 		</>
 	);
 }
