@@ -1,17 +1,22 @@
-import { useSelector } from 'react-redux';
+import EFGServices from '../../fetch/EFGs/EFGFetch';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function EFGList() {
-	console.log('tededest');
-	const efgs = useSelector((state)=>state.efgs);
+	// const efgs = useSelector((state) => state.efgs);
+	const [efgs, setEfgs] = useState([]);
+	const canalId = 1;
+	useEffect(() => {
+		EFGServices.getAllEFGs(setEfgs, canalId);
+	}, [canalId]);
+
 	return (
 		<>
 			<h1>Voici la liste des EFG</h1>
-			{efgs.map((efg)=>(
-				<Link 
-					to={`/efgs/${efg.idEfg}`} 
-					key={efg.idEfg}
-				>EFG {efg.idEfg}</Link>
+			{efgs.map((ef) => (
+				<Link to={`efgs/${ef.idEfg}`} key={ef.idEfg}>
+					Exo n°{ef.idEfg}
+				</Link>
 			))}
 		</>
 	);

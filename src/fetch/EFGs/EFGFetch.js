@@ -1,9 +1,25 @@
-async function getEFG(idEFG){
+// async function getEFG(idEFG) {
+// 	fetch('http://localhost:8080/cdamassy2021/canaux/1/EFGs/' + idEFG)
+// 		.then((response) => response.json())
+// 		.catch((error) => error);
+// }
+const url = '';
+export default class EFGServices {
+	static getAllEFGs(props, idCanal) {
+		fetch(`http://localhost:8080/cdamassy2021/canaux/${idCanal}/EFGs/`)
+			.then((response) => response.json())
+			.then((data) => {
+				props(data);
+			})
+			.catch((error) => error);
+	}
 
-    fetch("http://localhost:8080/cdamassy2021/canaux/1/EFGs/"+idEFG)
-    .then(response=>response.json())
-    .catch(error=>error)
-
+	static getEFG(props, idEFG) {
+		fetch(`http://localhost:8080/cdamassy2021/canaux/1/EFGs/${idEFG}`)
+			.then((response) => response.json())
+			.then((data) => {
+				props(data);
+			})
+			.catch((error) => error);
+	}
 }
-
-export default getEFG;
