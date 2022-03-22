@@ -1,8 +1,7 @@
 const Proposition = ({proposition}) => { //props = {todos: [{}, {}]}
     return (
         <div>
-            <p>{proposition.idProposition}</p>
-            <p>{proposition.libelle}</p>
+            <button class="buttonstyle">{proposition.libelle}</button>
         </div>
     )
 }
