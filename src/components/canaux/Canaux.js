@@ -1,4 +1,3 @@
-
 import React from "react";
 import Canal from "./Canal";
 import {useDispatch} from "react-redux";
@@ -11,7 +10,7 @@ function Canaux(){
         <div>
             <h1> Liste des canaux </h1>
             {canaux.map((canal) => {
-                    return <Canal key={canal.id} canal={canal} />
+                    return <Canal key={canal.idCanal} canal={canal} />
                 })}
         </div>
     )

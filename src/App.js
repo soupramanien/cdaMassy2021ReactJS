@@ -9,13 +9,13 @@ import {
 import { Provider } from 'react-redux';
 import QuestionWorkspace from './components/question/QuestionWorkspace';
 import Canaux from './components/canaux/Canaux';
-import Membres from './components/membres/Membres';
+import MembreCanal from './components/membres/MembreCanal';
 import { store } from './redux/store';
 
 function App() {
   return (
     <Provider store={store}>
-    <div>    
+    <div>
       <Router>
         <div>
           <nav>
@@ -26,13 +26,13 @@ function App() {
               <li>
                 <Link to="/canaux">Canaux</Link>
               </li>
-              
+
               <li>
                 <Link to="/efg">Exercices</Link>
               </li>
             </ul>
           </nav>
-          
+
         <Switch>
           <Route path="/questions">
               <QuestionWorkspace/>
@@ -40,10 +40,10 @@ function App() {
           <Route path="/canaux">
               <Canaux/>
           </Route>
-          <Route path="/membres">
-              <Membres/>
+          <Route exact path="/membres" component={MembreCanal} >
+
           </Route>
-          
+
           {/* <Route path="/efg">
               <MyComponent/>
           </Route> */}
