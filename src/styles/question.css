@@ -4,22 +4,37 @@
   padding: 3px;
   font-family: Roboto;
   text-align: left;
+  align-content: center;
   color: #292929;
   background-color: #a2d3fc4d;
   border-color: #4e4e4e;
+  align-items: center;
 }
-
-.questiontitle {
-  color: rgb(66, 66, 66);
-  display: flex; 
-  flex-direction: column;
+.questionTitle{
+  background-color:  #0068bde5;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  padding: 2px 20px;
+  margin: 3px 0px;
+  border-radius: 10px;
+  cursor: pointer;
+  width:inherit;
 }
-
-.nomauteur {
-  color: #472b00;
+.nomAuteur {
+  color:  #99d1ff;
   font-family: Roboto;
   text-align: left;
   font-style: italic;
+  font-size: 15px;
+  padding: 2px 20px;
+  margin: 3px 0px;
+}
+.libelleQuestion {
+  color: #ffffff;
+  font-family: Roboto;
+  text-align: left;
+  font-style: bold;
+  font-size: 25px;
 }
 
 .buttonstyle{
@@ -27,8 +42,9 @@
   color: rgb(75, 75, 75);
   font-size: 15px;
   padding: 10px 60px;
-  border-radius: 15px;
+  border-radius: 10px;
   margin: 10px 0px;
   cursor: pointer;
   width: 100%;
+  align-self: inherit;
 }

@@ -5,6 +5,7 @@ const PropositionList = ({list}) => {//props = {todos: [{}, {}]}
     return (
         <div>
             <div>
+                <p>Séléctionnez une réponse:</p>
                 {list.map((proposition) => {
                     return <Proposition key={proposition.idProposition.toString()} proposition={proposition} />
                 })}

@@ -5,6 +5,7 @@ const ReponseList = ({list}) => {//props = {todos: [{}, {}]}
     return (
         <div>
             <div>
+                <p>Réponses des utilisateurs:</p>
                 {list.map((reponse) => {
                     return <Reponse key={reponse.idAuteur.toString()} reponse={reponse} />
                 })}
