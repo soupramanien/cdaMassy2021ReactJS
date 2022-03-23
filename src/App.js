@@ -1,3 +1,4 @@
+
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -6,6 +7,7 @@ import Canaux from './components/canaux/Canaux';
 import Membres from './components/membres/Membres';
 import { store } from './redux/store';
 import { QuestionsProvider } from './contexts/questions.context';
+import React from 'react';
 import EFGList from './pages/EFGs/EFGList';
 import EFGDetail from './pages/EFGs/EFGDetail';
 
