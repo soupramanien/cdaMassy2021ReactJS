@@ -9,6 +9,7 @@
   background-color: #a2d3fc4d;
   border-color: #4e4e4e;
   align-items: center;
+  flex-direction: column;
 }
 .questionTitle{
   background-color:  #0068bde5;
@@ -67,11 +68,13 @@
 .buttonreponse{
   min-height: 40px;
   padding: 0 10px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border-radius: 10px;
+  margin-top: 4px;
   border: none;
   color: rgb(75, 75, 75);
   font-size: 1.2rem;
   background: linear-gradient(170deg, #a2d3fc6c 10%, #a2d3fc00 95%);
+  width: max-content;
 }
