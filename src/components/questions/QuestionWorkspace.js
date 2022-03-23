@@ -5,8 +5,7 @@ import '../../styles/question.css'
 
 const QuestionWorkspace = () => {//props = {todos: [{}, {}]}
     const questionsContext = useQuestions();
-    const currentUserId = 1;
-    const selectedCanalId = 2;
+    const selectedCanalId = 1;
 
     React.useEffect(() => {
         questionsContext.getQuestionsDataByCanalId(selectedCanalId);
@@ -14,9 +13,10 @@ const QuestionWorkspace = () => {//props = {todos: [{}, {}]}
 
     return (
         
-        <div className="questionWorkspace1">
+        <div className
+        ="questionWorkspace1">
             <h1>Sondages:</h1>
-                {!questionsContext.isLoading?<QuestionList list={questionsContext.questionsData} currentUserId={currentUserId}/>:<p>Loading ...</p>}
+                {!questionsContext.isLoading?<QuestionList list={questionsContext.questionsData} />:<p>Loading ...</p>}
         </div>
     )
 }
