@@ -2,6 +2,7 @@ import React from "react";
 import {useSelector} from "react-redux";
 import Membres from "./Membres";
 import {useParams} from "react-router-dom";
+import AddMembre from "./AddMembre";
 
 function MembreCanal(){
     const membresCanal = useSelector(state => state.membreCanal.membresCanal)
@@ -14,6 +15,7 @@ function MembreCanal(){
                     return  <Membres key={membreCanal.idCanal} membreCanal={membreCanal}/>
                 }
             })}
+             <AddMembre/>
             
         </div>
     )
