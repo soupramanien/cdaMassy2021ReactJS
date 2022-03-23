@@ -1,6 +1,3 @@
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux"
-import { actionCreators } from "../../redux/store"
 import Proposition from "./Proposition";
 
 const PropositionList = ({list}) => {//props = {todos: [{}, {}]}
