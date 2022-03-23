@@ -5,7 +5,7 @@ import ReponseList from "./ReponseList";
 
 const Question = ({question}) => { //props = {todos: [{}, {}]}
     const questionsContext = useQuestions();
-    const currentUserId = 1;
+    const currentUserId = 3;
 
     const isAutor = (currentUserId==question.idAuteur);
     var hasAnswered = false;

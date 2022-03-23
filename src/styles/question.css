@@ -28,6 +28,16 @@
   padding: 2px 20px;
   margin: 3px 0px;
 }
+.nomAuteurReponse {
+  color: rgb(75, 75, 75);
+  font-family: Roboto;
+  text-align: left;
+  font-style: bolder;
+  font-weight: bolder;
+  font-size: 15px;
+  padding: 2px 5px;
+  margin: 3px 0px;
+}
 .libelleQuestion {
   color: #ffffff;
   font-family: Roboto;
@@ -47,16 +57,21 @@
   width: 100%;
   align-self: inherit;
 }
+.libelleReponse{
+  margin-left: 15px;
+  font-size: 17px;
+  font-weight: unset;
+  font-style: normal;
 
+}
 .buttonreponse{
   min-height: 40px;
-  padding: 0 20px;
-  padding-top: 10px;
+  padding: 0 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   border-radius: 10px;
   border: none;
-  color: white;
+  color: rgb(75, 75, 75);
   font-size: 1.2rem;
-  font-weight: 500;
-  text-shadow: 1px 1px 0px #3a00df;
-  background: linear-gradient(170deg, #a2d3fc4d 10%, #a2d3fc2c 95%);
+  background: linear-gradient(170deg, #a2d3fc6c 10%, #a2d3fc00 95%);
 }
