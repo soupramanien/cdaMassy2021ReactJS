@@ -1,0 +1,20 @@
+== listerCanauxById ==
+
+@startuml
+boundary CanauxComponent
+participant JwtTokenAuthFilter
+control DispatcherServlet 
+control CanalController 
+
+
+CanauxComponent -> JwtTokenAuthFilter : Get/api/canaux 
+JwtTokenAuthFilter --> JwtTokenAuthFilter : check if token exists
+==Token not found ==
+JwtTokenAuthFilter --> CanauxComponent : error message 
+==Token OK ==
+JwtTokenAuthFilter -> DispatcherServlet : Get/api/canaux
+DispatcherServlet -> CanalController : Get/api/canaux
+CanalController --> DispatcherServlet : JSON<Canal> ou null ou Exception
+DispatcherServlet --> CanauxComponent : JSON<Canal>
+DispatcherServlet --> CanauxComponent : response 400
+@enduml
