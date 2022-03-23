@@ -1,11 +1,18 @@
 import React from 'react';
 import EFGButton from './EFGButton';
 
-const EFGCard = ({ props }) => {
+const EFGCard = (props) => {
+	console.log(props.isDisabled);
 	return (
 		<>
-			{props.idEfg} : {props.intitule}, par {props.idCreateur}.
-			{/* <EFGButton /> */}
+			{props.isDisabled && <>{props.efg.idEfg}</>}
+
+			{!props.isDisabled && (
+				<>
+					{props.efg.idEfg}
+					<EFGButton props={props.efg.idEfg} />
+				</>
+			)}
 		</>
 	);
 };

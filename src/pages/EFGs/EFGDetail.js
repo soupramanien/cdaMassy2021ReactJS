@@ -16,7 +16,7 @@ function EFGDetail() {
 
 	return (
 		<>
-			<EFGCard props={efg} />
+			<EFGCard efg={efg} isDisabled={true} />
 			<div>COMPOSANT GROUPE</div>
 		</>
 	);
