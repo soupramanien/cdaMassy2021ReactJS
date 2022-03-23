@@ -1,22 +1,26 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import Membres from "./Membres";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router";
 import AddMembre from "./AddMembre";
+import Membres from "./Membres";
+
 
 function MembreCanal(){
+    let params = useParams();
     const membresCanal = useSelector(state => state.membreCanal.membresCanal)
 
         return (
         <div>
+            {console.log(params)}
             <h1> Liste des membres : </h1>
             {membresCanal.map((membreCanal)=>{
-                if(membreCanal.idCanal==1){
+                
+                if(membreCanal.idCanal==params.idCanal){
                     return  <Membres key={membreCanal.idCanal} membreCanal={membreCanal}/>
                 }
             })}
-             <AddMembre/>
             
+            <AddMembre/>          
         </div>
     )
 }

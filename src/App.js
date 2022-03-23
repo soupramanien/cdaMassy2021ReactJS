@@ -39,8 +39,9 @@ function App() {
           </Route>
           <Route path="/canaux">
               <Canaux/>
+                
           </Route>
-          <Route exact path="/membres" component={MembreCanal} >
+          <Route exact path="/membres/:idCanal" component={MembreCanal} >
 
           </Route>
 
