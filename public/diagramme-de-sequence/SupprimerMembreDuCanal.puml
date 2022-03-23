@@ -7,13 +7,14 @@ control DispatcherServlet
 control PersonneController 
 
 
-MembreCanalComponent -> JwtTokenAuthFilter : Post/api/canaux/{id_canal}/{id_personne}
-JwtTokenAuthFilter -> JwtTokenAuthFilter : check if token exists
+MembreCanalComponent -> JwtTokenAuthFilter : Delete /api/canaux/{id_canal}/membres/{id_personne}
+JwtTokenAuthFilter --> JwtTokenAuthFilter : check if token exists
 ==Token not found ==
-JwtTokenAuthFilter -> MembreCanalComponent : error message 
+JwtTokenAuthFilter --> MembreCanalComponent : error message 
 ==Token OK ==
-JwtTokenAuthFilter -> DispatcherServlet : Post/api/canaux/{id_canal}/{id_personne}
-DispatcherServlet -> PersonneController : Post/api/canaux/{id_canal}/{id_personne}
-PersonneController -> DispatcherServlet : JSON<Membres>
-DispatcherServlet -> MembreCanalComponent : JSON<Membres>
+JwtTokenAuthFilter -> DispatcherServlet : Delete /api/canaux/{id_canal}/membres/{id_personne}
+DispatcherServlet -> PersonneController : Delete /api/canaux/{id_canal}/membres/{id_personne}
+PersonneController --> DispatcherServlet : ResponseEntity.ok(true) ou ResponseEntity.badRequest().build()
+DispatcherServlet --> MembreCanalComponent : ResponseEntity.ok(true)
+DispatcherServlet --> MembreCanalComponent : ResponseEntity.badRequest().build()
 @endumls
