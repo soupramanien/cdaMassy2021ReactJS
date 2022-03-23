@@ -1,0 +1,18 @@
+== listerMembresDuCanal ==
+
+@startuml
+boundary CanalComponent
+participant JwtTokenAuthFilter
+control DispatcherServlet 
+control PersonneController 
+
+CanalComponent -> JwtTokenAuthFilter : GET /api/canaux/{id_canal}/membres
+JwtTokenAuthFilter -> JwtTokenAuthFilter : check if token exists
+==Token not found ==
+JwtTokenAuthFilter -> CanalComponent : error message 
+==Token OK ==
+JwtTokenAuthFilter -> DispatcherServlet : GET /api/canaux/{id_canal}/membres 
+DispatcherServlet -> PersonneController : GET /api/canaux/{id_canal}/membres
+PersonneController -> DispatcherServlet : JSON<Membres>
+DispatcherServlet -> MemebreCanalComponent : JSON<Membres>
+@enduml
