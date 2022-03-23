@@ -1,7 +1,8 @@
 const Reponse = ({reponse}) => { //props = {todos: [{}, {}]}
     return (
         <div>
-            <p>{reponse.libelle}</p>
+            <p className="buttonreponse">{reponse.nomAuteur} :
+             {reponse.libelle}</p>
         </div>
     )
 }
