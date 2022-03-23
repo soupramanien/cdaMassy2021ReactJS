@@ -5,12 +5,23 @@ const EFGCard = (props) => {
 	console.log(props.isDisabled);
 	return (
 		<>
-			{props.isDisabled && <>{props.efg.idEfg}</>}
+			{props.isDisabled && (
+				<>
+					Exercice n°{props.efg.idEfg} : {props.efg.intitule}, par{' '}
+					{props.efg.idCreateur}.
+				</>
+			)}
 
 			{!props.isDisabled && (
 				<>
-					{props.efg.idEfg}
-					<EFGButton props={props.efg.idEfg} />
+					<tr>
+						<td>{props.efg.idEfg}</td>
+						<td>{props.efg.intitule}</td>
+						<td>{props.efg.groupes}</td>
+						<td>
+							<EFGButton props={props.efg.idEfg} />
+						</td>
+					</tr>
 				</>
 			)}
 		</>

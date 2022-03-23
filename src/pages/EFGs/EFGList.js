@@ -18,12 +18,21 @@ function EFGList() {
 	return (
 		<>
 			<h1>Voici la liste des EFG</h1>
-			{efgs.map((efg) => (
-				<>
-					<EFGCard efg={efg} key={efg.idEfg} isDisabled={false} />
-					<br />
-				</>
-			))}
+			<table>
+				<thead>
+					<tr>
+						<th>N°</th>
+						<th>Intitulé</th>
+						<th>Groupes</th>
+						<th>Lien de l'exercice</th>
+					</tr>
+				</thead>
+				<tbody>
+					{efgs.map((efg) => (
+						<EFGCard efg={efg} key={efg.idEfg} isDisabled={false} />
+					))}
+				</tbody>
+			</table>
 			{/* <EFGAdd/> */}
 		</>
 	);
