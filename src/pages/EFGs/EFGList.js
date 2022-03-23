@@ -1,11 +1,9 @@
 import EFGServices from '../../fetch/EFGs/EFGFetch';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import EFGCard from '../../components/EFGs/EFGCard';
-import { isDisabled } from '@testing-library/user-event/dist/utils';
+import css from './EFGStyle.css';
 
 function EFGList() {
-	// const efgs = useSelector((state) => state.efgs);
 	const [efgs, setEfgs] = useState([]);
 	const canalId = 1;
 	useEffect(() => {
@@ -16,8 +14,8 @@ function EFGList() {
 	console.log(setEfgs);
 
 	return (
-		<>
-			<h1>Voici la liste des EFG</h1>
+		<div class='container'>
+			<h1>Liste des exercices à faire en groupe</h1>
 			<table>
 				<thead>
 					<tr>
@@ -33,8 +31,9 @@ function EFGList() {
 					))}
 				</tbody>
 			</table>
-			{/* <EFGAdd/> */}
-		</>
+
+			<button type='button'>Créer un exercice</button>
+		</div>
 	);
 }
 
