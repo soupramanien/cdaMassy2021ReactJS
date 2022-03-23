@@ -6,18 +6,23 @@ import ReponseList from "./ReponseList";
 const Question = ({question}) => { //props = {todos: [{}, {}]}
     const questionsContext = useQuestions();
     const currentUserId = 1;
+
+    const isAutor = (currentUserId==question.idAuteur);
+    var hasAnswered = false;
+    
+    question.reponses.map((reponse) => {
+        if(currentUserId == reponse.idAuteur) hasAnswered=true;
+    })
+
     return (
         <div className="questionWorkspace1">
             <QuestionTitle question={question}></QuestionTitle>
             <div>
                 {(!questionsContext.isLoading)?
                     <div>
-                         {(currentUserId!=question.idAuteur)
-                            ?<PropositionList list={question.propositions}/>
-                            :null}
-                         {(currentUserId==question.idAuteur)
-                            ?<ReponseList list={question.reponses}/>
-                            :null}
+                         {!isAutor  && !hasAnswered
+                            ? <PropositionList list={question.propositions}/>
+                            : <ReponseList list={question.reponses}/>}
                     </div>
                 :<p>Loading ...</p>}
             </div>
