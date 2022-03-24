@@ -1,6 +1,5 @@
 import EFGServices from '../../fetch/EFGs/EFGFetch';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import EFGCard from '../../components/EFGs/EFGCard';
 import './EFGStyle.css';
 import EFGButton from '../../components/EFGs/EFGButton';
@@ -11,9 +10,6 @@ function EFGList() {
 	useEffect(() => {
 		EFGServices.getAllEFGs(setEfgs, canalId);
 	}, [canalId]);
-
-	console.log(efgs);
-	console.log(setEfgs);
 
 	return (
 		<div id='efg-container'>
@@ -34,7 +30,7 @@ function EFGList() {
 				</tbody>
 			</table>
 
-			<EFGButton props={`new`} />
+			<EFGButton props={'new'} />
 		</div>
 	);
 }
