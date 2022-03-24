@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import EFGServices from '../../fetch/EFGs/EFGFetch';
 
 function EFGAdd() {
 	const { register, handleSubmit } = useForm();
