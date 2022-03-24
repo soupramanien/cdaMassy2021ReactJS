@@ -1,7 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Switch } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Router } from 'react-router-dom';
 import { QuestionsProvider } from '../../contexts/questions.context';
@@ -10,11 +9,10 @@ import EFGDetail from '../../pages/EFGs/EFGDetail';
 import EFGList from '../../pages/EFGs/EFGList';
 import { store } from '../../redux/store';
 import Canaux from '../canaux/Canaux';
-import Coquille from '../coquille/Coquille';
-import Dashbord from '../coquille/Dashbord';
-import Footer from '../coquille/Footer';
-import Header from '../coquille/Header';
-import Menu from '../coquille/Menu';
+
+import Footer from './Footer';
+import Header from './Header';
+import Menu from './Menu';
 import Membres from '../membres/Membres';
 import QuestionWorkspace from '../questions/QuestionWorkspace';
 
