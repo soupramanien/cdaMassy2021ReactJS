@@ -5,7 +5,7 @@ import '../../styles/question.css'
 
 const QuestionWorkspace = () => {//props = {todos: [{}, {}]}
     const questionsContext = useQuestions();
-    const selectedCanalId = 1;
+    const selectedCanalId = 2;
 
     React.useEffect(() => {
         questionsContext.getQuestionsDataByCanalId(selectedCanalId);
