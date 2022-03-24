@@ -6,13 +6,13 @@ participant JwtTokenAuthFilter
 control DispatcherServlet 
 control PersonneController 
 
-CanalComponent -> JwtTokenAuthFilter : GET /api/canaux/{id_canal}/membres
+CanalComponent -> JwtTokenAuthFilter : GET /api/canal/{id_canal}
 JwtTokenAuthFilter -> JwtTokenAuthFilter : check if token exists
 ==Token not found ==
 JwtTokenAuthFilter -> CanalComponent : error message 
 ==Token OK ==
-JwtTokenAuthFilter -> DispatcherServlet : GET /api/canaux/{id_canal}/membres 
-DispatcherServlet -> PersonneController : GET /api/canaux/{id_canal}/membres
-PersonneController -> DispatcherServlet : JSON<Membres>
-DispatcherServlet -> MemebreCanalComponent : JSON<Membres>
+JwtTokenAuthFilter -> DispatcherServlet : GET /api/canal/{id_canal}
+DispatcherServlet -> PersonneController : GET /api/canal/{id_canal}
+PersonneController -> DispatcherServlet : JSON<MembreDto>
+DispatcherServlet -> MemebreCanalComponent : JSON<MembreDto>
 @enduml

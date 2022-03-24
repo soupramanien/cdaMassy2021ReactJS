@@ -7,14 +7,14 @@ control DispatcherServlet
 control CanalController 
 
 
-CanauxComponent -> JwtTokenAuthFilter : Get/api/canaux 
+CanauxComponent -> JwtTokenAuthFilter : Get /api/canaux/{idLogin} 
 JwtTokenAuthFilter --> JwtTokenAuthFilter : check if token exists
 ==Token not found ==
 JwtTokenAuthFilter --> CanauxComponent : error message 
 ==Token OK ==
-JwtTokenAuthFilter -> DispatcherServlet : Get/api/canaux
-DispatcherServlet -> CanalController : Get/api/canaux
-CanalController --> DispatcherServlet : JSON<Canal> ou null ou Exception
-DispatcherServlet --> CanauxComponent : JSON<Canal>
-DispatcherServlet --> CanauxComponent : response 400
+JwtTokenAuthFilter -> DispatcherServlet : Get /api/canaux/{idLogin}
+DispatcherServlet -> CanalController : Get /api/canaux/{idLogin}
+CanalController --> DispatcherServlet : JSON<CanalDto> ou null ou Exception
+DispatcherServlet --> CanauxComponent : JSON<CanalDto>
+DispatcherServlet --> CanauxComponent : response 500/400
 @enduml

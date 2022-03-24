@@ -8,13 +8,13 @@ control DispatcherServlet
 control PersonneController 
 
 
-MembreCanalComponent -> JwtTokenAuthFilter : Post/api/canaux/{id_canal}/{id_personne}
+MembreCanalComponent -> JwtTokenAuthFilter : Post /api/canal/{idCanal}/membre/{idMembre}
 JwtTokenAuthFilter --> JwtTokenAuthFilter : check if token exists
 ==Token not found ==
 JwtTokenAuthFilter --> MembreCanalComponent : error message 
 ==Token OK ==
-JwtTokenAuthFilter -> DispatcherServlet : Post/api/canaux/{id_canal}/{id_personne}
-DispatcherServlet -> PersonneController : Post/api/canaux/{id_canal}/{id_personne}
+JwtTokenAuthFilter -> DispatcherServlet : Post /api/canal/{idCanal}/membre/{idMembre}
+DispatcherServlet -> PersonneController : Post /api/canal/{idCanal}/membre/{idMembre}
 PersonneController --> DispatcherServlet : JSON<Membres> ou null ou Exception
 DispatcherServlet --> MembreCanalComponent : JSON<Membres>
 DispatcherServlet --> MembreCanalComponent : response 400
