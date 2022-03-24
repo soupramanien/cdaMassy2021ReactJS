@@ -8,7 +8,7 @@ export default class Dashbord extends Component {
      
         
 			
-			<div>
+			<div className='container'>
 				<QuestionsProvider>
 				<QuestionWorkspace />
 				</QuestionsProvider>
