@@ -11,6 +11,8 @@ import EFGList from './pages/EFGs/EFGList';
 import EFGDetail from './pages/EFGs/EFGDetail';
 import EFGAdd from './pages/EFGs/EFGAdd';
 
+import Coquille from './components/coquille/Coquille';
+
 function App() {
 	return (
 		<Provider store={store}>
@@ -24,6 +26,14 @@ function App() {
 								</li>
 								<li>
 									<Link to='/canaux'>Canaux</Link>
+								</li>
+
+
+								<li>
+									<Link to='/efgs'>Exercices</Link>
+								</li>
+								<li>
+									<Link to='/coquille'>Coquille</Link>
 								</li>
 							</ul>
 						</nav>
@@ -43,6 +53,10 @@ function App() {
 							</Route>
 
 							<Route exact path='/efgs/new' component={EFGAdd} />
+
+							<Route path ='/coquille'>
+								<Coquille />
+							</Route>
 							<Route exact path='/efgs' component={EFGList} />
 							<Route exact path='/efgs/:idEfg' component={EFGDetail} />
 						</Switch>
