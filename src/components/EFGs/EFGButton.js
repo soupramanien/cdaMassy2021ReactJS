@@ -1,8 +1,25 @@
 import { Link } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
 const EFGButton = ({ props }) => {
-	console.log(props);
-	return <Link to={`efgs/` + props}>Lien de l'exercice</Link>;
+	let css = '';
+	let message = '';
+
+	const history = useHistory();
+	if (isNaN(props)) {
+		css = 'btn-creation';
+		message = 'Créer un exercice';
+	} else {
+		css = 'efg-link';
+		message = "Lien de l'exercice";
+	}
+
+	return (
+		<>
+			<Link to={'efgs/' + props} className={css}>
+				{message}
+			</Link>
+		</>
+	);
 };
 
 export default EFGButton;

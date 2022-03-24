@@ -2,13 +2,16 @@ import React from 'react';
 import EFGButton from './EFGButton';
 
 const EFGCard = (props) => {
-	console.log(props.isDisabled);
+
+	
 	return (
 		<>
 			{props.isDisabled && (
 				<>
-					Exercice n°{props.efg.idEfg} : {props.efg.intitule}, par{' '}
-					{props.efg.idCreateur}.
+					<h1>
+						Exercice n°{props.efg.idEfg} : {props.efg.intitule}
+					</h1>
+					<p>Nom du formateur : {props.formateur.prenom} {props.formateur.nom}</p>
 				</>
 			)}
 

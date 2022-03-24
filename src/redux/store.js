@@ -25,6 +25,18 @@ const initialState = {
 			idCreateur: 2,
 		}
 	],
+	formateur : {
+		"idPersonne": 0,
+		"prenom": "",
+		"nom": "",
+		"email": "",
+		"tel": "",
+		"pwd": "",
+		"est_formateur": 0,
+		"est_gestionnaire": 0,
+		"est_administrateur": 0,
+		"allCanauxMembre": null
+	},
 };
 
 const actionTypes = {};

@@ -1,7 +1,8 @@
 import EFGServices from '../../fetch/EFGs/EFGFetch';
 import { useState, useEffect } from 'react';
 import EFGCard from '../../components/EFGs/EFGCard';
-import css from './EFGStyle.css';
+import './EFGStyle.css';
+import EFGButton from '../../components/EFGs/EFGButton';
 
 function EFGList() {
 	const [efgs, setEfgs] = useState([]);
@@ -10,11 +11,8 @@ function EFGList() {
 		EFGServices.getAllEFGs(setEfgs, canalId);
 	}, [canalId]);
 
-	console.log(efgs);
-	console.log(setEfgs);
-
 	return (
-		<div class='container'>
+		<div id='efg-container'>
 			<h1>Liste des exercices à faire en groupe</h1>
 			<table className='tab-efg'>
 				<thead>
@@ -32,9 +30,7 @@ function EFGList() {
 				</tbody>
 			</table>
 
-			<button className='btn-creation' type='btn-efg'>
-				Créer un exercice
-			</button>
+			<EFGButton props={'new'} />
 		</div>
 	);
 }
