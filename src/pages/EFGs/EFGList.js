@@ -6,9 +6,12 @@ import EFGButton from '../../components/EFGs/EFGButton';
 
 function EFGList() {
 	const [efgs, setEfgs] = useState([]);
+	const [members, setMembers] = useState();
+
 	const canalId = 1;
 	useEffect(() => {
 		EFGServices.getAllEFGs(setEfgs, canalId);
+		EFGServices.getNombreMembres(setMembers, canalId);
 	}, [canalId]);
 
 	return (
@@ -30,7 +33,7 @@ function EFGList() {
 				</tbody>
 			</table>
 
-			<EFGButton props={'new'} />
+			{members >= 5 && <EFGButton props={'new'} />}
 		</div>
 	);
 }
