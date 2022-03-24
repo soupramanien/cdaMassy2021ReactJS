@@ -9,9 +9,7 @@ import { QuestionsProvider } from './contexts/questions.context';
 import React from 'react';
 import EFGList from './pages/EFGs/EFGList';
 import EFGDetail from './pages/EFGs/EFGDetail';
-
 import EFGAdd from './pages/EFGs/EFGAdd';
-
 
 function App() {
 	return (
@@ -26,11 +24,6 @@ function App() {
 								</li>
 								<li>
 									<Link to='/canaux'>Canaux</Link>
-								</li>
-
-
-								<li>
-									<Link to='/efgs'>Exercices</Link>
 								</li>
 							</ul>
 						</nav>
@@ -49,6 +42,7 @@ function App() {
 								<Membres />
 							</Route>
 
+							<Route exact path='/efgs/new' component={EFGAdd} />
 							<Route exact path='/efgs' component={EFGList} />
 							<Route exact path='/efgs/:idEfg' component={EFGDetail} />
 						</Switch>
