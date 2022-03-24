@@ -71,7 +71,7 @@ h3 {
   color: rgb(75, 75, 75);
   font-size: 15px;
   padding: 10px 60px;
-  border-radius: 10px;
+  border-radius: 30px;
   margin: 10px 0px;
   cursor: pointer;
   width: 100%;
@@ -89,7 +89,7 @@ h3 {
   padding: 0 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  border-radius: 10px;
+  border-radius: 30px;
   margin-top: 4px;
   border: none;
   color: rgb(75, 75, 75);
