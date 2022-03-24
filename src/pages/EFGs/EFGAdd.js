@@ -8,7 +8,20 @@ function EFGAdd() {
 	const membresCanal = 7 - 1;
 
 	return (
-		<form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+		<form onSubmit={handleSubmit((data) => {
+				setData(JSON.stringify(data));
+				let efg = {
+					"createur": {
+						"idCanal": 1,
+						"idPersonne": 3
+					},
+					"intitule": data.intitule,
+					"groupes": "2,2",
+					"idCanal": 1,
+					"idCreateur": 3
+				}
+				EFGServices.postEFG((res)=>console.log(res),efg);
+			})}>
 			<label>Intitulé de l'exercice</label>
 			<input {...register('intitule')} placeholder="Initulé de l'exercice" />
 			<br />
