@@ -2,32 +2,35 @@
 	margin-left: 50px;
 }
 
-table {
+.tab-efg {
 	background-color: aliceblue;
 	border: 1px solid #1899d6;
 	border-collapse: collapse;
 }
-th {
+
+.tab-efg th {
 	background-color: rgba(24, 154, 214, 0.5);
 }
-td {
+
+.tab-efg td {
 	border: 1px solid #1899d6;
 }
-td,
-th {
+
+.tab-efg td,
+.tab-efg th {
 	padding: 15px;
 }
 
-th:nth-child(1),
-th:nth-child(2),
-th:nth-child(3),
-td:nth-child(1),
-td:nth-child(2),
-td:nth-child(3) {
+.tab-efg th:nth-child(1),
+.tab-efg th:nth-child(2),
+.tab-efg th:nth-child(3),
+.tab-efg td:nth-child(1),
+.tab-efg td:nth-child(2),
+.tab-efg td:nth-child(3) {
 	border-right: 1px solid #1899d6;
 }
 
-button {
+.btn-creation {
 	appearance: button;
 	background-color: #1899d6;
 	border: solid transparent;
