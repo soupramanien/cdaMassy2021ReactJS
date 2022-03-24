@@ -16,7 +16,7 @@ function EFGList() {
 	return (
 		<div class='container'>
 			<h1>Liste des exercices à faire en groupe</h1>
-			<table>
+			<table className='tab-efg'>
 				<thead>
 					<tr>
 						<th>N°</th>
@@ -32,7 +32,9 @@ function EFGList() {
 				</tbody>
 			</table>
 
-			<button type='button'>Créer un exercice</button>
+			<button className='btn-creation' type='btn-efg'>
+				Créer un exercice
+			</button>
 		</div>
 	);
 }
