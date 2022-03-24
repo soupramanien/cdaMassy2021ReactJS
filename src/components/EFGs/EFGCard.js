@@ -2,8 +2,6 @@ import React from 'react';
 import EFGButton from './EFGButton';
 
 const EFGCard = (props) => {
-
-	
 	return (
 		<>
 			{props.isDisabled && (
@@ -11,7 +9,9 @@ const EFGCard = (props) => {
 					<h1>
 						Exercice n°{props.efg.idEfg} : {props.efg.intitule}
 					</h1>
-					<p>Nom du formateur : {props.formateur.prenom} {props.formateur.nom}</p>
+					<p>
+						Nom du formateur : {props.formateur.prenom} {props.formateur.nom}
+					</p>
 				</>
 			)}
 
