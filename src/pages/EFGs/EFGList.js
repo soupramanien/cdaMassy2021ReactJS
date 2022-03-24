@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import EFGCard from '../../components/EFGs/EFGCard';
 import './EFGStyle.css';
+import EFGButton from '../../components/EFGs/EFGButton';
 
 function EFGList() {
 	const [efgs, setEfgs] = useState([]);
@@ -33,9 +34,7 @@ function EFGList() {
 				</tbody>
 			</table>
 
-			<Link to={'egfs/new'} className='btn-creation' type='btn-efg'>
-				Créer un exercice
-			</Link>
+			<EFGButton props={`new`} />
 		</div>
 	);
 }

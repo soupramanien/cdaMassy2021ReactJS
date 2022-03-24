@@ -1,22 +1,19 @@
 import { Link } from 'react-router-dom';
 
 const EFGButton = ({ props }) => {
-	console.log(props);
-	let url;
-	let message;
-	let css;
+	let css = '';
+	let message = '';
 
 	if (!isNaN(props)) {
-		let url = `efgs/`;
-		props = url + props;
-		message = "Accéder à l'exercice";
 		css = 'efg-link';
+		message = "Lien de l'exercice";
 	} else {
-		console.log('test');
+		css = 'btn-creation';
+		message = 'Créer un exercice';
 	}
 
 	return (
-		<Link to={props} className={css}>
+		<Link to={`efgs/` + props} className={css}>
 			{message}
 		</Link>
 	);
