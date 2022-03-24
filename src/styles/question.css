@@ -113,6 +113,7 @@
 .input_btn--inside {
   margin-left: -96px;
   border-radius: 25px;
+  border-color: #1a1c1f4d;
 }
 
 .input_form__field {
@@ -128,4 +129,9 @@
   padding: 22px 18px;
   border-radius: 30px;
   
+}
+.input_form__field:focus { 
+  outline: none !important;
+  border-color: #719ECE;
+  box-shadow: 0 0 10px #719ECE;
 }
