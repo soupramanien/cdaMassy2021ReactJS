@@ -1,5 +1,6 @@
 import EFGServices from '../../fetch/EFGs/EFGFetch';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import EFGCard from '../../components/EFGs/EFGCard';
 import './EFGStyle.css';
 
@@ -32,9 +33,9 @@ function EFGList() {
 				</tbody>
 			</table>
 
-			<button className='btn-creation' type='btn-efg'>
+			<Link to={'egfs/new'} className='btn-creation' type='btn-efg'>
 				Créer un exercice
-			</button>
+			</Link>
 		</div>
 	);
 }

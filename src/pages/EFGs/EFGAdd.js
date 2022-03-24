@@ -1,5 +1,9 @@
-const EFGAdd = () => {
-	<h1>Créer un exercice</h1>;
-};
+function EFGAdd() {
+	return (
+		<>
+			<h1>Créer un exercice</h1>
+		</>
+	);
+}
 
 export default EFGAdd;

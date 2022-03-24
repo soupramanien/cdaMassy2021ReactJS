@@ -9,6 +9,7 @@ import { QuestionsProvider } from './contexts/questions.context';
 import React from 'react';
 import EFGList from './pages/EFGs/EFGList';
 import EFGDetail from './pages/EFGs/EFGDetail';
+import EFGAdd from './pages/EFGs/EFGAdd';
 
 function App() {
 	return (
@@ -46,6 +47,7 @@ function App() {
 							</Route>
 							<Route exact path='/efgs' component={EFGList} />
 							<Route exact path='/efgs/:idEfg' component={EFGDetail} />
+							<Route exact path='/efgs/new' component={EFGAdd} />
 						</Switch>
 					</div>
 				</Router>
