@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import QuestionWorkspace from './components/questions/QuestionWorkspace';
@@ -10,60 +9,16 @@ import React from 'react';
 import EFGList from './pages/EFGs/EFGList';
 import EFGDetail from './pages/EFGs/EFGDetail';
 import EFGAdd from './pages/EFGs/EFGAdd';
+import Home from './components/home/Home';
 
 import Coquille from './components/coquille/Coquille';
 
 function App() {
 	return (
-		<Provider store={store}>
-			<div>
-				<Router>
-					<div>
-						<nav>
-							<ul>
-								<li>
-									<Link to='/questions'>Sondages</Link>
-								</li>
-								<li>
-									<Link to='/canaux'>Canaux</Link>
-								</li>
-
-
-								<li>
-									<Link to='/efgs'>Exercices</Link>
-								</li>
-								<li>
-									<Link to='/coquille'>Coquille</Link>
-								</li>
-							</ul>
-						</nav>
-
-						<Switch>
-							<Route path='/questions'>
-								<QuestionsProvider>
-									<QuestionWorkspace />
-								</QuestionsProvider>
-							</Route>
-
-							<Route path='/canaux'>
-								<Canaux />
-							</Route>
-							<Route path='/membres'>
-								<Membres />
-							</Route>
-
-							<Route exact path='/efgs/new' component={EFGAdd} />
-
-							<Route path ='/coquille'>
-								<Coquille />
-							</Route>
-							<Route exact path='/efgs' component={EFGList} />
-							<Route exact path='/efgs/:idEfg' component={EFGDetail} />
-						</Switch>
-					</div>
-				</Router>
-			</div>
-		</Provider>
+		<div className="App">
+			<Home />
+		</div>
 	);
 }
+
 export default App;
