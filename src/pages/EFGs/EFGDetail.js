@@ -10,28 +10,28 @@ function EFGDetail() {
 	const idEFG = parseInt(params.idEfg);
 	const initialState = useSelector((state) => state.efgs[0]);
 	const [efg, setEFG] = useState(initialState);
-	const [formateur,setFormateur] = useState({
-		"idPersonne": 0,
-		"prenom": "",
-		"nom": "",
-		"email": "",
-		"tel": "",
-		"pwd": "",
-		"est_formateur": 0,
-		"est_gestionnaire": 0,
-		"est_administrateur": 0,
-		"allCanauxMembre": null
-	})
+	const [formateur, setFormateur] = useState({
+		idPersonne: 0,
+		prenom: '',
+		nom: '',
+		email: '',
+		tel: '',
+		pwd: '',
+		est_formateur: 0,
+		est_gestionnaire: 0,
+		est_administrateur: 0,
+		allCanauxMembre: null,
+	});
 	useEffect(() => {
 		EFGServices.getEFG(setEFG, idEFG);
-		EFGServices.getCreator(setFormateur,idEFG);
+		EFGServices.getCreator(setFormateur, idEFG);
 	}, [idEFG]);
 
 	return (
 		<div id='efg-container'>
 			{idEFG === efg.idEfg && (
 				<>
-					<EFGCard efg={efg} isDisabled={true} formateur={formateur}/>
+					<EFGCard efg={efg} isDisabled={true} formateur={formateur} />
 					<div>COMPOSANT GROUPE</div>
 				</>
 			)}

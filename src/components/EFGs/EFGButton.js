@@ -14,11 +14,9 @@ const EFGButton = ({ props }) => {
 	}
 
 	return (
-		<>
-			<Link to={'efgs/' + props} className={css}>
-				{message}
-			</Link>
-		</>
+		<Link to={'efgs/' + props} className={css}>
+			{message}
+		</Link>
 	);
 };
 
