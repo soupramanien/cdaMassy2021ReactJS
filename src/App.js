@@ -25,10 +25,6 @@ function App() {
 								<li>
 									<Link to='/canaux'>Canaux</Link>
 								</li>
-
-								<li>
-									<Link to='/efgs'>Exercices</Link>
-								</li>
 							</ul>
 						</nav>
 
@@ -45,9 +41,10 @@ function App() {
 							<Route path='/membres'>
 								<Membres />
 							</Route>
+
+							<Route exact path='/efgs/new' component={EFGAdd} />
 							<Route exact path='/efgs' component={EFGList} />
 							<Route exact path='/efgs/:idEfg' component={EFGDetail} />
-							<Route exact path='/efgs/new' component={EFGAdd} />
 						</Switch>
 					</div>
 				</Router>
