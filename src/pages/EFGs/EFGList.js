@@ -14,7 +14,6 @@ function EFGList() {
 		EFGServices.getNombreMembres(setMembers, canalId);
 	}, [canalId]);
 
-	console.log(members);
 	return (
 		<div id='efg-container'>
 			{efgs.length >= 1 && (
