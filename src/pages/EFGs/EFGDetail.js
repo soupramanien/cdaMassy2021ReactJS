@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import EFGButton from '../../components/EFGs/EFGButton';
 import EFGCard from '../../components/EFGs/EFGCard';
 import EFGServices from '../../fetch/EFGs/EFGFetch';
 import EFGNotFound from './EFGNotFound';
@@ -26,6 +27,7 @@ function EFGDetail() {
 					<div>COMPOSANT GROUPE</div>
 				</>
 			)}
+			<EFGButton props={'efgs'} />
 			{idEFG !== efg.idEfg && <EFGNotFound />}
 		</div>
 	);

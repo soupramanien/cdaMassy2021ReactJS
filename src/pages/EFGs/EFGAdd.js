@@ -1,4 +1,3 @@
-import EFGServices from '../../fetch/EFGs/EFGFetch';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -26,17 +25,17 @@ function EFGAdd() {
 			<input {...register('intitule')} placeholder="Initulé de l'exercice" />
 			<br />
 
-			<label>Nombre d'élèves par groupe</label>
-			<select {...register('nbMembersPerGroup')}>
-				<option value='1'>1</option>
-				<option value='2'>2</option>
-				{membresCanal >= 6 && <option value='3'>3</option>}
-				{membresCanal >= 8 && <option value='4'>4</option>}
-				{membresCanal >= 10 && <option value='5'>5</option>}
-			</select>
-			<p>{data}</p>
-			<input type='submit' />
-		</form>
+				<label>Nombre d'élèves par groupe</label>
+				<select {...register('nbMembersPerGroup')}>
+					<option value='1'>1</option>
+					<option value='2'>2</option>
+					{membresCanal >= 6 && <option value='3'>3</option>}
+					{membresCanal >= 8 && <option value='4'>4</option>}
+					{membresCanal >= 10 && <option value='5'>5</option>}
+				</select>
+				<p>{data}</p>
+				<input type='submit' />
+			</form>
 	);
 }
 
