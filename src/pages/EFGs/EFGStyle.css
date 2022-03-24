@@ -1,5 +1,9 @@
-.container {
+#efg-container {
 	margin-left: 50px;
+}
+
+.efg-link {
+	color: black;
 }
 
 .tab-efg {

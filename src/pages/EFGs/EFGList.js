@@ -1,7 +1,7 @@
 import EFGServices from '../../fetch/EFGs/EFGFetch';
 import { useState, useEffect } from 'react';
 import EFGCard from '../../components/EFGs/EFGCard';
-import css from './EFGStyle.css';
+import './EFGStyle.css';
 
 function EFGList() {
 	const [efgs, setEfgs] = useState([]);
@@ -14,7 +14,7 @@ function EFGList() {
 	console.log(setEfgs);
 
 	return (
-		<div class='container'>
+		<div id='efg-container'>
 			<h1>Liste des exercices à faire en groupe</h1>
 			<table className='tab-efg'>
 				<thead>

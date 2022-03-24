@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import EFGCard from '../../components/EFGs/EFGCard';
 import EFGServices from '../../fetch/EFGs/EFGFetch';
-import css from './EFGStyle.css';
 
 function EFGDetail() {
 	let params = useParams();
@@ -16,7 +15,7 @@ function EFGDetail() {
 	}, [idEFG]);
 
 	return (
-		<div id='container'>
+		<div id='efg-container'>
 			<EFGCard efg={efg} isDisabled={true} />
 			<div>COMPOSANT GROUPE</div>
 		</div>

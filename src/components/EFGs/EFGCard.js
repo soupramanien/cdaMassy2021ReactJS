@@ -7,8 +7,10 @@ const EFGCard = (props) => {
 		<>
 			{props.isDisabled && (
 				<>
-					Exercice n°{props.efg.idEfg} : {props.efg.intitule}, par{' '}
-					{props.efg.idCreateur}.
+					<h1>
+						Exercice n°{props.efg.idEfg} : {props.efg.intitule}
+					</h1>
+					<p>Nom du formateur : {props.efg.idCreateur}</p>
 				</>
 			)}
 
