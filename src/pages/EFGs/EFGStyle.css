@@ -64,3 +64,7 @@
 	white-space: nowrap;
 	width: auto;
 }
+
+.form-input {
+	margin-left: 15px;
+}
