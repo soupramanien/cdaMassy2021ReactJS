@@ -11,7 +11,7 @@ export default class Header extends Component {
 					{/* Left navbar links */}
 					<ul className="navbar-nav">
 						<li className="nav-item">
-							<Link className="nav-link" data-widget="pushmenu" to={'#'}>
+							<Link className="nav-link" data-widget="pushmenu" to={'/'}>
 								<i className="fas fa-bars" />
 							</Link>
 						</li>

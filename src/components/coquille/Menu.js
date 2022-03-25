@@ -7,7 +7,8 @@ export default class Menu extends Component {
 			<div className="container">
 				<aside className="main-sidebar sidebar-dark-primary elevation-4">
 					{/* Brand Logo */}
-					<Link to={'#'} className="brand-link">
+
+					<Link to={'/'} className="brand-link">
 						<img
 							src="dist/img/Cda-Logo.jpeg"
 							alt="Cda Massy 2022"
