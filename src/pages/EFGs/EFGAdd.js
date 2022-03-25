@@ -39,7 +39,9 @@ function EFGAdd() {
 
 	return (
 		<div id='efg-container'>
+			<h1>Création d'un exercice</h1>
 			<form
+				id='efg-form'
 				onSubmit={handleSubmit((data) => {
 					setData(JSON.stringify(data));
 					console.log(data);
@@ -57,10 +59,12 @@ function EFGAdd() {
 				})}>
 				<label>Intitulé de l'exercice</label>
 				<input
+					className='form-input'
 					{...register('intitule')}
 					placeholder="Initulé de l'exercice"
 					required
 				/>
+				<br />
 				<br />
 
 				<label>Nombre d'élèves par groupe</label>
@@ -71,8 +75,9 @@ function EFGAdd() {
 					{members >= 8 && <option value='4'>4</option>}
 					{members >= 10 && <option value='5'>5</option>}
 				</select>
-
-				<input type='submit' />
+				<br />
+				<br />
+				<input type='submit' className='btn-creation' />
 			</form>
 		</div>
 	);
