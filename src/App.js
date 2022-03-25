@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import QuestionWorkspace from './components/questions/QuestionWorkspace';
 import Canaux from './components/canaux/Canaux';
 import Membres from './components/membres/Membres';
+import Questionnaires from './components/questionnaires/Questionnaires';
 import { store } from './redux/store';
 import { QuestionsProvider } from './contexts/questions.context';
 
@@ -27,9 +28,11 @@ function App() {
               <li>
                 <Link to="/canaux">Canaux</Link>
               </li>
-              
               <li>
-                <Link to="/efg">Exercices</Link>
+                <Link to="/questionnaires">Questionnaires </Link>
+              </li>
+              <li>
+                <Link to="/efgs">Exercices</Link>
               </li>
             </ul>
           </nav>
@@ -48,9 +51,15 @@ function App() {
           <Route path="/membres">
               <Membres/>
           </Route>
-          {/* <Route path="/efg">
-              <MyComponent/>
-          </Route> */}
+
+          <Route path="/questionnaires">
+            <Questionnaires />
+          </Route>
+
+ {/*      <Route path="/efgs">
+            <Efgs />
+          </Route>
+  */}        
         </Switch>
       </div>
     </Router>
