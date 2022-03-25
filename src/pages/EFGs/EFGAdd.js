@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import EFGServices from '../../fetch/EFGs/EFGFetch';
 
 function EFGAdd() {
@@ -55,7 +57,8 @@ function EFGAdd() {
 						idCanal: 1,
 						idCreateur: 3,
 					};
-					EFGServices.postEFG((res) => console.log(res), efg);			
+					EFGServices.postEFG(() => {}, efg);
+					window.location = "/efgs";		
 				})}>
 				<label>Intitulé de l'exercice</label>
 				<input
