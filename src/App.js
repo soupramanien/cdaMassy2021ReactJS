@@ -11,42 +11,40 @@ import EFGList from './pages/EFGs/EFGList';
 import EFGDetail from './pages/EFGs/EFGDetail';
 import EFGAdd from './pages/EFGs/EFGAdd';
 
+import Coquille from './components/coquille/Coquille';
+import Header from './components/coquille/Header';
+import Menu from './components/coquille/Menu';
+
 function App() {
 	return (
 		<Provider store={store}>
-			<div>
+			<div className="container">
 				<Router>
-					<div>
-						<nav>
-							<ul>
-								<li>
-									<Link to='/questions'>Sondages</Link>
-								</li>
-								<li>
-									<Link to='/canaux'>Canaux</Link>
-								</li>
-							</ul>
-						</nav>
+					<Header />
+					<Menu />
 
-						<Switch>
-							<Route path='/questions'>
-								<QuestionsProvider>
-									<QuestionWorkspace />
-								</QuestionsProvider>
-							</Route>
+					<Switch>
+						<Route exact path="/">
+							<QuestionsProvider>
+								<QuestionWorkspace />
+							</QuestionsProvider>
+						</Route>
 
-							<Route path='/canaux'>
-								<Canaux />
-							</Route>
-							<Route path='/membres'>
-								<Membres />
-							</Route>
+						<Route exact path="/canaux">
+							<Canaux />
+						</Route>
+						<Route exact path="/membres">
+							<Membres />
+						</Route>
 
-							<Route exact path='/efgs/new' component={EFGAdd} />
-							<Route exact path='/efgs' component={EFGList} />
-							<Route exact path='/efgs/:idEfg' component={EFGDetail} />
-						</Switch>
-					</div>
+						<Route exact path="/efgs/new" component={EFGAdd} />
+
+						<Route path="/coquille">
+							<Coquille />
+						</Route>
+						<Route exact path="/efgs" component={EFGList} />
+						<Route exact path="/efgs/:idEfg" component={EFGDetail} />
+					</Switch>
 				</Router>
 			</div>
 		</Provider>
