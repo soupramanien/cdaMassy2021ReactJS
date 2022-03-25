@@ -17,13 +17,13 @@ export default class EFGServices {
 			.catch((error) => error);
 	}
 
-	static postEFG(props, efg){
+	static postEFG(props, efg) {
 		let headers = new Headers();
-		headers.append("Content-Type","application/json");
+		headers.append('Content-Type', 'application/json');
 		fetch(`http://localhost:8080/cdamassy2021/api/1/EFGs/new`, {
 			method: 'POST',
 			headers: headers,
-			body: JSON.stringify(efg)
+			body: JSON.stringify(efg),
 		})
 			.then((response) => response.json())
 			.then((data) => {
@@ -32,7 +32,7 @@ export default class EFGServices {
 			.catch((error) => error);
 	}
 
-	static getCreator(props,idEFG){
+	static getCreator(props, idEFG) {
 		fetch(`http://localhost:8080/cdamassy2021/api/1/EFGs/${idEFG}/createur`)
 			.then((response) => response.json())
 			.then((data) => {
@@ -41,8 +41,10 @@ export default class EFGServices {
 			.catch((error) => error);
 	}
 
-	static getNombreMembres(props,idCanal){
-		fetch(`http://localhost:8080/cdamassy2021/api/${idCanal}/EFGs/nombreMembres`)
+	static getNombreMembres(props, idCanal) {
+		fetch(
+			`http://localhost:8080/cdamassy2021/api/${idCanal}/EFGs/nombreMembres`
+		)
 			.then((response) => response.json())
 			.then((data) => {
 				props(data);
