@@ -9,7 +9,12 @@ const PropositionList = ({list}) => {//props = {todos: [{}, {}]}
                 <p>Séléctionnez une réponse:</p>
 
                 {isNoProposition?
-                    <p>TextInput + Button"send"</p>
+                    <div>
+                        <form class="input_form">
+                            <input type="text" class="input_form__field" placeholder="Réponse" />
+                            <button type="button" class="input_btn input_btn--primary input_btn--inside input_uppercase">Envoyer</button>
+                        </form>
+                    </div>
                     : list.map((proposition) => {
                     return <Proposition key={proposition.idProposition.toString()} proposition={proposition} />
                 })}
