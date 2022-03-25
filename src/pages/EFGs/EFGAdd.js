@@ -42,6 +42,7 @@ function EFGAdd() {
 			<form
 				onSubmit={handleSubmit((data) => {
 					setData(JSON.stringify(data));
+					console.log(data);
 					let efg = {
 						createur: {
 							idCanal: 1,
@@ -52,7 +53,7 @@ function EFGAdd() {
 						idCanal: 1,
 						idCreateur: 3,
 					};
-					EFGServices.postEFG((res) => console.log(res), efg);
+					EFGServices.postEFG((res) => console.log(res), efg);			
 				})}>
 				<label>Intitulé de l'exercice</label>
 				<input
@@ -64,8 +65,8 @@ function EFGAdd() {
 
 				<label>Nombre d'élèves par groupe</label>
 
-				<select id='select' onChange={() => reliquat()}>
-					<option value='2'>2</option>
+				<select id='select' onChange={() => reliquat()} required>
+				<option value='2'>Select...</option><option value='2'>2</option>
 					{members >= 6 && <option value='3'>3</option>}
 					{members >= 8 && <option value='4'>4</option>}
 					{members >= 10 && <option value='5'>5</option>}
