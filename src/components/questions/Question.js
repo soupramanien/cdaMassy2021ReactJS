@@ -1,18 +1,20 @@
-import { QuestionsProvider, useQuestions } from "../../contexts/questions.context";
+import { QuestionsProvider, useQuestionsContext } from "../../contexts/questions.context";
 import PropositionList from "./PropositionList";
 import QuestionTitle from "./QuestionTitle";
 import ReponseList from "./ReponseList";
 
 const Question = ({question}) => { //props = {todos: [{}, {}]}
-    const questionsContext = useQuestions();
-    const currentUserId = 3;
+    const questionsContext = useQuestionsContext();
+    const currentUserId = 1;
 
     const isAutor = (currentUserId==question.idAuteur);
     var hasAnswered = false;
     
-    question.reponses.map((reponse) => {
+    question.reponses.forEach((reponse) => {
         if(currentUserId == reponse.idAuteur) hasAnswered=true;
+        console.log(reponse);
     })
+    
 
     return (
         <div className="questionWorkspace1">

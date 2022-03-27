@@ -1,11 +1,11 @@
 import QuestionList from "./QuestionList";
 import React from "react";
-import { QuestionsProvider, useQuestions } from "../../contexts/questions.context";
+import { QuestionsProvider, useQuestionsContext } from "../../contexts/questions.context";
 import '../../styles/question.css'
 
 const QuestionWorkspace = () => {//props = {todos: [{}, {}]}
-    const questionsContext = useQuestions();
-    const selectedCanalId = 2;
+    const questionsContext = useQuestionsContext();
+    const selectedCanalId = 1;
 
     React.useEffect(() => {
         questionsContext.getQuestionsDataByCanalId(selectedCanalId);

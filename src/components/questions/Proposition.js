@@ -1,6 +1,9 @@
+import { useQuestionsContext } from "../../contexts/questions.context";
+
 const Proposition = ({proposition}) => { //props = {todos: [{}, {}]}
+    const QuestionsContext = useQuestionsContext();
     function postQuestion(){
-        alert(proposition.libelle);
+        QuestionsContext.postReponse({idAuteur:1,idQuestion:4,libelle:proposition.libelle});
     }
     return (
         <div>
