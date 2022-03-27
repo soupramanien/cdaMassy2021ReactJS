@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 function Canaux(props) {
     //id de l'utilisateur login, en dur pour le moment
-    const idLogin = 1;
+    const currentUserId = 4;
     //recuperer dispatch et canal dans l'initState
     const dispatch = useDispatch();
     const canaux = useSelector(state => state.canal.canaux);
@@ -14,7 +14,7 @@ function Canaux(props) {
     const loadCanaux = async () => {
         try {
             const url = "";
-            const res = await fetch("http://localhost:8080/cdamassy2021/api/canaux/" + idLogin);
+            const res = await fetch("http://localhost:8080/cdamassy2021/api/canaux/" + currentUserId);
             const newCanaux = await res.json();
             dispatch(actionCreators.loadCanaux(newCanaux))
         } catch (error) {
