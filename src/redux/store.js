@@ -4,12 +4,7 @@ import { createStore } from "redux";
 
 const initialState = {
     canal: {
-        canaux: [
-            { idCanal: 1, nom: 'CANAL N°1'},
-            { idCanal: 2, nom: 'CANAL N°2'},
-            { idCanal: 3, nom: 'CANAL N°3'},
-            { idCanal: 4, nom: 'CANAL N°4'}
-        ]
+        canaux: []
     },
     membre: {
         personnes:[
@@ -38,7 +33,8 @@ const initialState = {
 const actionTypes = {
     ADD_CANAL: "addCanal",
     ADD_MEMBRE: "addMembre",
-    DELETE_MEMBRE: "deleteMembre"
+    DELETE_MEMBRE: "deleteMembre",
+    LOAD_CANAUX: "loadCanaux",
 
 }
 
@@ -54,6 +50,10 @@ export const actionCreators = {
     deleteMembre: (membreCanal) =>({
         type: actionTypes.DELETE_MEMBRE,
         value: membreCanal
+    }),
+    loadCanaux: (canaux) =>({
+        type: actionTypes.LOAD_CANAUX,
+        value: canaux
     })
     
 }
@@ -66,6 +66,8 @@ const reducer = function (state = initialState, action) {
             return { ...state, membreCanal: {...state.membreCanal, membresCanal: [ ...state.membreCanal.membresCanal,action.value ] }}
         case actionTypes.DELETE_MEMBRE:
              return { ...state, membreCanal: {...state.membreCanal, membresCanal: [ ...state.membreCanal.membresCanal,action.value ] }}
+        case actionTypes.LOAD_CANAUX:
+            return { ...state, canal: { ...state.canal, canaux: action.value } }
 
         default:
           return state;

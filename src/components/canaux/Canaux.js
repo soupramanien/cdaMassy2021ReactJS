@@ -1,65 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Canal from "./Canal";
 import { useDispatch } from "react-redux";
 import { actionCreators } from "../../redux/store";
 import { useSelector } from "react-redux";
 
-function Canaux() {
+function Canaux(props) {
+    //id de l'utilisateur login, en dur pour le moment
+    const idLogin = 1;
+    //recuperer dispatch et canal dans l'initState
+    const dispatch = useDispatch();
     const canaux = useSelector(state => state.canal.canaux);
+    //fonctuon pour recuperer le canal aupres Java
+    const loadCanaux = async () => {
+        try {
+            const url = "";
+            const res = await fetch("http://localhost:8080/cdamassy2021/api/canaux/" + idLogin);
+            const newCanaux = await res.json();
+            dispatch(actionCreators.loadCanaux(newCanaux))
+        } catch (error) {
+            alert("Network Error")
+            console.log(error);
+        }
+    }
 
-    //solution 1
-    // useEffect(() => {
-    //     loadUsers();
-    //     (async () => {
-    //       const user = await AsyncStorage.getItem("current_user")
-    //       Alert.alert(JSON.parse(user).username);
-    
-    //     })()
-    //   }, []);
-    //   return loading ? (
-    //     <View style={[styles.container, styles.horizontal]}>
-    //       <ActivityIndicator />
-    //     </View>) : (
-    //     <FlatList
-    //       data={users}
-    //       keyExtractor={user => String(user.id)}
-    //       renderItem={({ item }) => (
-    //         <UserListItem user={item} />
-    //       )}
-    //       refreshing={loading}
-    //       onRefresh={loadUsers}
-    //     />
-    //   )
-    // }
-
-    //solution 2
-    // getCanaux = async (idLogin) =>{
-    //     let data = await fetch("http://localhost:8080/cdamassy2021/api/canaux/" + idLogin);
-    //     let product = await data.json();
-    //     this.setState({
-    //         product : product
-    //     })
-
-    //solution 3
-    // componentDidMount() {
-    //     const idLogin = 1;
-    //     const getCanaux = (idLogin) => {
-    //         let promesse = fetch("http://localhost:8080/cdamassy2021/api/canaux/" + idLogin,
-    //             { method: "GET" })
-    //         promesse
-    //             .then((data) => {
-    //                 if (data.status === 200) {
-    //                     return data.json()
-    //                 }
-    //                 alert("echec de recuperation de memebres !")
-    //                 return [];
-    //             })
-    //             .then((canaux) => {
-    //                 canaux = canaux
-    //             })
-    //     }
-    // }
-
+    //lancer loadCanaux
+    useEffect(() => {
+        loadCanaux();
+    }, []);
 
     return (
         <div>
