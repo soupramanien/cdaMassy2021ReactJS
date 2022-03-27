@@ -5,17 +5,15 @@
 boundary MembreCanalComponent
 participant JwtTokenAuthFilter
 control DispatcherServlet 
-control PersonneController 
 
-
-MembreCanalComponent -> JwtTokenAuthFilter : Post/api/canaux/{id_canal}/{id_personne}
+MembreCanalComponent -> JwtTokenAuthFilter : Post /api/canal/{idCanal}/membre/{idMembre}
 JwtTokenAuthFilter --> JwtTokenAuthFilter : check if token exists
 ==Token not found ==
 JwtTokenAuthFilter --> MembreCanalComponent : error message 
 ==Token OK ==
-JwtTokenAuthFilter -> DispatcherServlet : Post/api/canaux/{id_canal}/{id_personne}
-DispatcherServlet -> PersonneController : Post/api/canaux/{id_canal}/{id_personne}
-PersonneController --> DispatcherServlet : JSON<Membres> ou null ou Exception
+JwtTokenAuthFilter -> DispatcherServlet : Post /api/canal/{idCanal}/membre/{idMembre}
+DispatcherServlet -> PersonneRestController : Post /api/canal/{idCanal}/membre/{idMembre}
+PersonneRestController --> DispatcherServlet : JSON<Membres> ou null ou Exception
 DispatcherServlet --> MembreCanalComponent : JSON<Membres>
 DispatcherServlet --> MembreCanalComponent : response 400
 @enduml

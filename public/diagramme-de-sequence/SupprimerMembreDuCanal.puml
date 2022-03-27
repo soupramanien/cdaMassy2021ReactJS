@@ -4,17 +4,17 @@
 boundary MembreCanalComponent
 participant JwtTokenAuthFilter
 control DispatcherServlet 
-control PersonneController 
+control PersonneRestController 
 
 
-MembreCanalComponent -> JwtTokenAuthFilter : Delete /api/canaux/{id_canal}/membres/{id_personne}
+MembreCanalComponent -> JwtTokenAuthFilter : Delete /api/canal/{idCanal}/membre/{idMembre}
 JwtTokenAuthFilter --> JwtTokenAuthFilter : check if token exists
 ==Token not found ==
 JwtTokenAuthFilter --> MembreCanalComponent : error message 
 ==Token OK ==
-JwtTokenAuthFilter -> DispatcherServlet : Delete /api/canaux/{id_canal}/membres/{id_personne}
-DispatcherServlet -> PersonneController : Delete /api/canaux/{id_canal}/membres/{id_personne}
-PersonneController --> DispatcherServlet : ResponseEntity.ok(true) ou ResponseEntity.badRequest().build()
+JwtTokenAuthFilter -> DispatcherServlet : Delete /api/canal/{idCanal}/membre/{idMembre}
+DispatcherServlet -> PersonneRestController : Delete /api/canal/{idCanal}/membre/{idMembre}
+PersonneRestController --> DispatcherServlet : ResponseEntity.ok(true) ou ResponseEntity.badRequest().build()
 DispatcherServlet --> MembreCanalComponent : ResponseEntity.ok(true)
 DispatcherServlet --> MembreCanalComponent : ResponseEntity.badRequest().build()
 @endumls
