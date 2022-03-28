@@ -4,8 +4,7 @@ import {useState} from "react"
 import Membres from "../Membres";
 
     function AddMembre(props){
-        let membresCanal = useSelector(state => state.membreCanal.membresCanal)
-        const membres = useSelector(state => state.membre.personnes)
+        let proposition = useSelector(state => state.propositionMembre.membre)
         const [nomPersonne, setNomPersonne] = useState("")
         const dispatch = useDispatch()
     
@@ -13,14 +12,14 @@ import Membres from "../Membres";
         const onChangePersonne=(nomPersonne)=>{
 
             const nom = nomPersonne.target.value
-            const result = membres.filter(item=> item.nom.toLowerCase().includes(nom.toLowerCase()))
+            dispatch(actionCreators.proposeMembre(nom))
             let suggestion =''
             if(nom!=0){    
-                result.forEach(item=> suggestion+=`<div>${item.nom}</div>`);
+                proposition.forEach(item=> suggestion+=`<div>${item.nom}</div>`);
             }
             document.getElementById("suggestions").innerHTML=suggestion
             
-                }
+        }
         
     
         // const OnAddMembre = () => {

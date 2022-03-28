@@ -65,7 +65,10 @@ const initialState = {
 			{idCanal: 3, idMembre: 4},
 			{idCanal: 4, idMembre: 1},
 		]
-	}
+	},
+    propositionMembre:{
+        membre:[]
+    }
 }
 
 	const actionTypes = {
@@ -73,6 +76,7 @@ const initialState = {
 	ADD_MEMBRE: "addMembre",
 	DELETE_MEMBRE: "deleteMembre",
 	LOAD_MEMBRE: "loadMembreCanal",
+    PROPOSE_MEMBRE: "proposeMembre"
 
 	}
 
@@ -88,7 +92,12 @@ const initialState = {
 	deleteMembre: (membreCanal) =>({
 		type: actionTypes.DELETE_MEMBRE,
 		value: membreCanal
-	})
+	}),
+    proposeMembre: (searchInput)=>({
+        type: actionTypes.PROPOSE_MEMBRE,
+        value: searchInput
+    })
+
 
 	}
 
@@ -98,7 +107,9 @@ const initialState = {
 			return { ...state, canal: { ...state.canal, canaux: [ ...state.canal.canaux,action.value ] }}
 		case actionTypes.ADD_MEMBRE:
 			return { ...state, membreCanal: {...state.membreCanal, membresCanal: [ ...state.membreCanal.membresCanal,action.value ] }}
-		case actionTypes.DELETE_MEMBRE:
+        case actionTypes.PROPOSE_MEMBRE:
+                return { ...state, propositionMembre: { ...state.propositionMembre, membre:[...state.membre.personnes.filter(item=> item.nom.toLowerCase().includes(action.value.toLowerCase()))] }}
+        case actionTypes.DELETE_MEMBRE:
 			return { ...state, membreCanal: {...state.membreCanal, membresCanal: [...state.membreCanal.membresCanal.filter((mc) =>{ return !(mc.idMembre===action.value.idMembre && mc.idCanal === action.value.idCanal) })] } }
 		default:
 		return state;

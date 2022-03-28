@@ -11,9 +11,6 @@ function MembreCanal(){
 
         return (
         <div>
-            {console.log(params)}
-            {console.log(useParams())}
-
             <h1> Liste des membres : </h1>
             {membresCanal.map((membreCanal)=>{
                 if(membreCanal.idCanal==params.idCanal){
