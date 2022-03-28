@@ -10,6 +10,7 @@ import React from 'react';
 import EFGList from './pages/EFGs/EFGList';
 import EFGDetail from './pages/EFGs/EFGDetail';
 import EFGAdd from './pages/EFGs/EFGAdd';
+import MembreCanal from './components/membres/MembreCanal';
 
 function App() {
 	return (
@@ -35,12 +36,11 @@ function App() {
 								</QuestionsProvider>
 							</Route>
 
-							<Route path='/canaux'>
-								<Canaux />
+							<Route path='/canaux' component={Canaux}>
+								
 							</Route>
-							<Route path='/membres'>
-								<Membres />
-							</Route>
+							<Route path='/membres/:idCanal'component={MembreCanal}/>
+
 
 							<Route exact path='/efgs/new' component={EFGAdd} />
 							<Route exact path='/efgs' component={EFGList} />
